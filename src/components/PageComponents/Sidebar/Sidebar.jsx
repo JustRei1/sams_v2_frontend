@@ -115,9 +115,9 @@ const Sidebar = () => {
                     <div className="flex w-13 h-13 shrink-0 bg-gray-500 rounded items-center justify-center">
                         <span className="text-[1.75rem]">GL</span>
                     </div>
-                    <div className={`flex items-center transition-all duration-150 whitespace-nowrap
+                    <div className={`flex items-center whitespace-nowrap transition-all duration-150
                         ${isCollapsed 
-                            ? "max-w-0 opacity-0 -translate-x-20" 
+                            ? "max-w-0 opacity-0 -translate-x-10" 
                             : "max-w-80 opacity-100 translate-x-0"
                         }`}
                     >
