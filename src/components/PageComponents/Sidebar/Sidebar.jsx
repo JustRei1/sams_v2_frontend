@@ -23,7 +23,7 @@ const Sidebar = () => {
 
     return(
         <aside className={`h-screen transition-all duration-300
-                ${isCollapsed ? "w-20" : "w-80"}`
+                ${isCollapsed ? "w-21" : "w-80"}`
             }
         >
             <nav className="h-full flex flex-col bg-blue-800 border-r-3 border-blue-950 shadow-sm">
@@ -33,7 +33,7 @@ const Sidebar = () => {
                     }
                 >
                     <img 
-                        className={`w-32 
+                        className={`w-32 whitespace-nowrap
                             ${isCollapsed ? "hidden" : "block"}`
                         } 
                         src="" 
@@ -57,68 +57,85 @@ const Sidebar = () => {
                         icon={<MdDashboard size="40"/>}
                         label={"Dashboard"}
                         isCollapsed={isCollapsed}
+                        link={"/"}
                     />
                     <SidebarItem
                         icon={<MdFactory size="40"/>}
                         label={"Department"}
                         isCollapsed={isCollapsed}
+                        link={"/department"}
                     />
                     <SidebarItem
                         icon={<MdNewspaper size="40"/>}
                         label={"Cost Center"}
                         isCollapsed={isCollapsed}
+                        link={"/cost_center"}
                     />
                     <SidebarItem
                         icon={<MdPerson size="40"/>}
                         label={"Employee"}
                         isCollapsed={isCollapsed}
+                        link={"/employee"}
                     />
                     <SidebarItem
                         icon={<MdDevicesOther size="40"/>}
                         label={"Asset"}
                         isCollapsed={isCollapsed}
+                        link={"/asset"}
                     />
                     <SidebarItem
                         icon={<MdAssignmentInd size="40"/>}
                         label={"Assignment"}
                         isCollapsed={isCollapsed}
+                        link={"/asset_assignment"}
                     />
                     <SidebarItem
                         icon={<MdDocumentScanner size="40"/>}
                         label={"Logs"}
                         isCollapsed={isCollapsed}
+                        link={"/logs"}
                     />
                     <SidebarItem
                         icon={<FaTrash size="40"/>}
                         label={"Disposed"}
                         isCollapsed={isCollapsed}
+                        link={"/disposed"}
                     />
                     <SidebarItem
                         icon={<MdAccountCircle size="40"/>}
                         label={"Accounts"}
                         isCollapsed={isCollapsed}
+                        link={"/account"}
                     />
                 
                 </div>
                 {/* Sidebar footer */}
-                <div className="flex border-t-2 border-blue-900 p-3">
+                <div className="flex justify-between border-t-2 border-blue-900 p-3">
                     {/* User Icon */}
-                    <div className="flex w-13 h-13 bg-gray-500 rounded items-center justify-center"
-                    >
-                        <span className="text-[36px]">GL</span>
+                    <div className="flex w-13 h-13 shrink-0 bg-gray-500 rounded items-center justify-center">
+                        <span className="text-[1.75rem]">GL</span>
                     </div>
-                    <div className={`flex flex-1 justify-between items-center w-52 ml-3 
-                        ${isCollapsed ? "hidden" : "block"}`}
+                    <div className={`flex items-center transition-all duration-150 whitespace-nowrap
+                        ${isCollapsed 
+                            ? "max-w-0 opacity-0 -translate-x-20" 
+                            : "max-w-80 opacity-100 translate-x-0"
+                        }`}
                     >
                         <div>
                             <h4 className="font-semibold">Gabriel Liwanag</h4>
                             <span className="text-xs text-white">gbliwanag@nexutech.com.ph</span>
                         </div>
+                    </div>
+                    <button className={`flex p-0 w-12 h-12 rounded-lg bg-transparent! hover:text-blue-400 justify-center items-center transition-all duration-150
+                        ${isCollapsed 
+                            ? "max-w-0 opacity-0 -translate-x-20" 
+                            : "max-w-80 opacity-100 translate-x-0"
+                        }`}
+                    >
                         <MdOutlineLogout 
                             size="24"
                         />
-                    </div>
-
+                    </button>
                 </div>
             </nav>
         </aside>
