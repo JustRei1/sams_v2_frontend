@@ -52,7 +52,7 @@ const Sidebar = () => {
                     </button>
                 </div>
                 {/* Sidebar items */}
-                <div className="flex-1 px-3">
+                <div className="flex-1 px-3 py-10">
                     <SidebarItem
                         icon={<MdDashboard size="40"/>}
                         label={"Dashboard"}
