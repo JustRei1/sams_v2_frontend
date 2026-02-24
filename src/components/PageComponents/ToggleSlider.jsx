@@ -40,7 +40,7 @@ const ToggleSlider = () => {
             
             <span
                 className="
-                relative inline-flex h-7 w-14 items-center rounded-full bg-slate-300
+                relative inline-flex h-7 w-14 mt-1.5 items-center rounded-full bg-slate-300
                 transition-colors duration-200 ease-out
                 
                 peer-checked:bg-linear-to-r

@@ -5,7 +5,7 @@ import ToggleSlider from "./ToggleSlider"
 
 // Icons
 import { MdOutlineSettings } from "react-icons/md"
-
+import { FaSearch } from "react-icons/fa"
 
 
 const Navbar = () => {
@@ -29,11 +29,32 @@ const Navbar = () => {
                 <a href="/" className="text-black col-span-1 font-bold text-lg self-center">Admin</a>
 
                 {/* Search bar */}
-                <input type="text" className="col-span-4 bg-gray-100 border border-blue-600 rounded-3xl text-black px-6 text-lg"/>
+                <div className="col-span-4">
+                    <div className="relative">
+                        <input 
+                            type="text" 
+                            className="w-full bg-gray-100 border border-gray-400 rounded-3xl text-black pl-6 pr-18 z-10 text-lg h-12"
+                            placeholder="Search"
+                        />
+                        <button
+                            type="button"
+                            className="absolute right-6 top-1/2 -translate-y-1/2 translate-x-1/2
+                                        w-12 h-12 z-0 bg-blue-600 rounded-tr-full rounded-br-full text-white
+                                        flex items-center justify-center shadow
+                                        focus:outline-none hover:bg-blue-700"
+                            aria-label="Search"
+                        >
+                            <FaSearch 
+                                className="absolute right-4"
+                                size="20"
+                            />
+                        </button>
+                    </div>
+                </div>
 
                 {/* Toggle */}
 
-                <div className="col-start-10 self-center">
+                <div className="col-start-10 place-self-center">
                     <ToggleSlider />
                 </div>
 
