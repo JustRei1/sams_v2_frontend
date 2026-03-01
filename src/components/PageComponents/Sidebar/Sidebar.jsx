@@ -112,7 +112,7 @@ const Sidebar = () => {
                 {/* Sidebar footer */}
                 <div className="flex justify-between border-t-2 border-blue-900 p-3">
                     {/* User Icon */}
-                    <div className="flex w-13 h-13 shrink-0 bg-gray-500 rounded items-center justify-center">
+                    <div className="flex w-13 h-13 shrink-0 ml-0.5 bg-gray-500 rounded items-center justify-center">
                         <span className="text-[1.75rem]">GL</span>
                     </div>
                     <div className={`flex items-center whitespace-nowrap transition-all duration-150
