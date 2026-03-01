@@ -36,7 +36,6 @@ const Sidebar = () => {
                         className={`w-32 whitespace-nowrap
                             ${isCollapsed ? "hidden" : "block"}`
                         } 
-                        src="" 
                         alt="SAMS LOGO" 
                     />
                     <button 
@@ -107,7 +106,6 @@ const Sidebar = () => {
                         isCollapsed={isCollapsed}
                         link={"/account"}
                     />
-                
                 </div>
                 {/* Sidebar footer */}
                 <div className="flex justify-between border-t-2 border-blue-900 p-3">
