@@ -28,7 +28,7 @@ const Sidebar = () => {
         >
             <nav className="h-full flex flex-col bg-blue-800 border-r-3 border-blue-950 shadow-sm">
                 {/* Sidebar header */}
-                <div className={`p-4 flex items-center
+                <div className={`p-3 flex items-center
                         ${isCollapsed ? "justify-center" : "justify-between"}`
                     }
                 >
@@ -39,7 +39,9 @@ const Sidebar = () => {
                         alt="SAMS LOGO" 
                     />
                     <button 
-                        className={`flex flex-1 p-0 w-12 max-w-12 h-12 rounded-lg bg-transparent! hover:text-blue-400 justify-center items-center`}
+                        className={`flex flex-1 p-0 w-12 max-w-12 h-12 rounded-lg 
+                                  hover:bg-blue-900
+                                    justify-center items-center`}
                         onClick={() => setIsCollapsed(!isCollapsed)}
                     >
                         <MdOutlineArrowBackIos 
@@ -124,11 +126,12 @@ const Sidebar = () => {
                             <span className="text-xs text-white">gbliwanag@nexutech.com.ph</span>
                         </div>
                     </div>
-                    <button className={`flex p-0 w-12 h-12 rounded-lg bg-transparent! hover:text-blue-400 justify-center items-center transition-all duration-150
-                        ${isCollapsed 
-                            ? "max-w-0 opacity-0 -translate-x-20" 
-                            : "max-w-80 opacity-100 translate-x-0"
-                        }`}
+                    <button className={`flex p-0 w-12 h-12 rounded-lg hover:bg-blue-900 
+                                        justify-center items-center transition-all duration-150
+                                        ${isCollapsed 
+                                            ? "max-w-0 opacity-0 -translate-x-20" 
+                                            : "max-w-80 opacity-100 translate-x-0"
+                                        }`}
                     >
                         <MdOutlineLogout 
                             size="24"
