@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { Link } from "react-router"
 
 // Components
 import SidebarItem from "./SidebarItems"
+import Logo from "../Logo"
 
 // Icons
 import { MdOutlineArrowBackIos } from "react-icons/md"
@@ -32,12 +34,7 @@ const Sidebar = () => {
                         ${isCollapsed ? "justify-center" : "justify-between"}`
                     }
                 >
-                    <img 
-                        className={`w-32 whitespace-nowrap
-                            ${isCollapsed ? "hidden" : "block"}`
-                        } 
-                        alt="SAMS LOGO" 
-                    />
+                    <Logo className={`${isCollapsed ? "hidden" : "block"}`}/>
                     <button 
                         className={`flex flex-1 p-0 w-12 max-w-12 h-12 rounded-lg 
                                   hover:bg-blue-900
@@ -126,17 +123,18 @@ const Sidebar = () => {
                             <span className="text-xs text-white">gbliwanag@nexutech.com.ph</span>
                         </div>
                     </div>
-                    <button className={`flex p-0 w-12 h-12 rounded-lg hover:bg-blue-900 
+                    <Link className={`flex p-0 w-12 h-12 rounded-lg hover:bg-blue-900 
                                         justify-center items-center transition-all duration-150
                                         ${isCollapsed 
                                             ? "max-w-0 opacity-0 -translate-x-20" 
                                             : "max-w-80 opacity-100 translate-x-0"
                                         }`}
+                          to="/login"
                     >
                         <MdOutlineLogout 
                             size="24"
                         />
-                    </button>
+                    </Link>
                 </div>
             </nav>
         </aside>
