@@ -4,6 +4,7 @@ import { useState } from "react"
 import ToggleSlider from "../ToggleSlider"
 import Dropdown from "../Dropdown"
 import SettingsItems from "../SettingsItems"
+import TextField from "../Textfield"
 
 // Icons
 import { MdOutlineSettings } from "react-icons/md"
@@ -36,10 +37,14 @@ const Navbar = () => {
                 {/* Search bar */}
                 <div className="col-span-4">
                     <div className="relative">
-                        <input 
+                        {/* <input 
                             type="text" 
                             className="w-full bg-gray-100 border border-gray-400 rounded-3xl text-black pl-6 pr-18 z-10 text-lg h-12"
                             placeholder="Search"
+                        /> */}
+                        <TextField 
+                            placeholderText="Search"
+                            type="search"
                         />
                         <button
                             type="button"
