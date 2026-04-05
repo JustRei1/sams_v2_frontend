@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router'
+import { AuthProvider } from './AuthContext/AuthContext.jsx'
 import './App.css'
 
 // Page Components
@@ -22,7 +23,7 @@ import User from './components/User'
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path="/login" element={<Login/>}/>
 
@@ -41,7 +42,7 @@ function App() {
           <Route path="/user" element={<User/>}/>
         </Route>
       </Routes>
-    </>
+    </AuthProvider>
   )
 }
 

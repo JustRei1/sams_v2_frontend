@@ -4,7 +4,14 @@ import { useState } from "react"
 import { FaRegEye } from "react-icons/fa6"
 import { FaRegEyeSlash } from "react-icons/fa6"
 
-const TextField = ({placeholderText = "", type = "default"}) => {
+const TextField = ({
+    placeholderText = "", 
+    type = "default",
+    value,
+    onChange,
+    onBlur,
+    name
+}) => {
 
     const [toggle, setToggle] = useState(false)
 
@@ -15,16 +22,30 @@ const TextField = ({placeholderText = "", type = "default"}) => {
                 // Search bar input
                 ?   <input 
                         type="text" 
-                        className="w-full bg-gray-100 border border-gray-400 rounded-3xl text-black pl-6 pr-18 z-10 text-lg h-12"
+                        className="
+                            w-full rounded-3xl pl-6 pr-18 z-10 h-12
+                            bg-gray-100 border border-gray-400 text-black text-lg
+                            "
                         placeholder={placeholderText}
+                        name={name}
+                        value={value}
+                        onBlur={onBlur}
+                        onChange={onChange}
                     />
                 : type === "password" 
                 // Password field
                 ?   <div className="relative">
                         <input                  
                             type={!toggle ? "password" : "text"} 
-                            className="w-full bg-gray-100 border border-gray-400 rounded-3xl text-black px-6 text-md h-10"
+                            className="
+                                    w-full rounded-3xl px-6 text-md h-10 
+                                    bg-gray-100 border border-gray-400 text-black
+                                    "
                             placeholder={placeholderText}
+                            name={name}
+                            value={value}
+                            onBlur={onBlur}
+                            onChange={onChange}
                         />
                         <button
                             type="button"
@@ -54,8 +75,15 @@ const TextField = ({placeholderText = "", type = "default"}) => {
                 // Default textfield
                 :   <input                  
                         type="text" 
-                        className="w-full bg-gray-100 border border-gray-400 rounded-3xl text-black px-6 text-md h-10"
+                        className="
+                                    w-full rounded-3xl px-6 text-md h-10 
+                                    bg-gray-100 border border-gray-400  text-black
+                                    "
                         placeholder={placeholderText}
+                        name={name}
+                        value={value}
+                        onBlur={onBlur}
+                        onChange={onChange}
                     />
             }
         </>

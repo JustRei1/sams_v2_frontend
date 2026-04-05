@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router"
+import { useAuth } from "../../../AuthContext/AuthContext"
 
 // Components
 import SidebarItem from "./SidebarItems"
@@ -19,9 +20,9 @@ import { MdAccountCircle } from "react-icons/md";
 import { FaTrash } from "react-icons/fa6"
 
 
-
 const Sidebar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false)
+    const { userData } = useAuth()
 
     return(
         <aside className={`h-screen transition-all duration-300
@@ -110,7 +111,17 @@ const Sidebar = () => {
                 <div className="flex justify-between border-t-2 border-blue-900 p-3">
                     {/* User Icon */}
                     <div className="flex w-13 h-13 shrink-0 ml-0.5 bg-gray-500 rounded items-center justify-center">
-                        <span className="text-[1.75rem]">GL</span>
+                        <span className="text-[1.75rem]">
+                            {
+                            userData ? (
+                                userData.first_name && userData.last_name ? (
+                                `${userData.first_name[0]}${userData.last_name[0]}`
+                                ) : (
+                                <MdPerson size={40} />
+                                )
+                            ) : null
+                            }
+                        </span>
                     </div>
                     <div className={`flex items-center whitespace-nowrap transition-all duration-150
                         ${isCollapsed 
@@ -119,8 +130,16 @@ const Sidebar = () => {
                         }`}
                     >
                         <div>
-                            <h4 className="font-semibold">Gabriel Liwanag</h4>
-                            <span className="text-xs text-white">gbliwanag@nexutech.com.ph</span>
+                            <h4 className="font-semibold">
+                                {userData ? (
+                                    <>
+                                    {userData.first_name} {userData.last_name}
+                                    </>
+                                ) : null}
+                            </h4>
+                            <span className="text-xs text-white">
+                                {userData?.email}
+                            </span>
                         </div>
                     </div>
                     <Link className={`flex p-0 w-12 h-12 rounded-lg hover:bg-blue-900 
